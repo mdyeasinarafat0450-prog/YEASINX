@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-color: #080A09;
+    --accent-neon: #B6FF3B;
+    --accent-glow: rgba(182, 255, 59, 0.35);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #080A09;
+    color: #FFFFFF;
+    color-scheme: dark;
+    selection-background-color: #B6FF3B;
+    selection-color: #080A09;
+  }
+
+  ::selection {
+    background-color: #B6FF3B;
+    color: #080A09;
+  }
+
+  body {
+    background-color: #080A09;
+    color: #FFFFFF;
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080A09;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1F2A22;
+    border-radius: 9999px;
+    border: 1px solid rgba(182, 255, 59, 0.2);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #B6FF3B;
+  }
+}
+
+@layer components {
+  /* Futuristic Card */
+  .neon-card {
+    background: linear-gradient(135deg, rgba(20, 26, 22, 0.7) 0%, rgba(11, 14, 12, 0.8) 100%);
+    border: 1px solid rgba(182, 255, 59, 0.15);
+    backdrop-filter: blur(16px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+  }
+  .neon-card:hover {
+    border-color: rgba(182, 255, 59, 0.5);
+    box-shadow: 0 0 30px rgba(182, 255, 59, 0.15), inset 0 0 20px rgba(182, 255, 59, 0.05);
+    transform: translateY(-4px);
+  }
+
+  /* Glass panel */
+  .glass-panel {
+    background: rgba(14, 18, 16, 0.75);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Glow button */
+  .btn-neon {
+    background-color: #B6FF3B;
+    color: #080A09;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 20px rgba(182, 255, 59, 0.35);
+  }
+  .btn-neon:hover {
+    background-color: #D6FF85;
+    box-shadow: 0 0 35px rgba(182, 255, 59, 0.65);
+    transform: translateY(-2px);
+  }
+
+  /* Outlined neon button */
+  .btn-neon-outline {
+    background-color: transparent;
+    color: #B6FF3B;
+    border: 1px solid rgba(182, 255, 59, 0.4);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-neon-outline:hover {
+    background-color: rgba(182, 255, 59, 0.1);
+    border-color: #B6FF3B;
+    box-shadow: 0 0 20px rgba(182, 255, 59, 0.25);
+    transform: translateY(-2px);
+  }
+
+  /* Subtle noise overlay */
+  .noise-bg {
+    background-image: radial-gradient(rgba(182, 255, 59, 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+/* Animations & Utility */
+@keyframes neonPulse {
+  0%, 100% {
+    opacity: 0.3;
+    filter: drop-shadow(0 0 15px rgba(182, 255, 59, 0.3));
+  }
+  50% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 30px rgba(182, 255, 59, 0.6));
+  }
+}
+
+.animate-neon-pulse {
+  animation: neonPulse 4s ease-in-out infinite;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

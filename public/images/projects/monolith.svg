@@ -1,0 +1,48 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" fill="#080A09"/>
+  <!-- Ambient subtle architectural lighting -->
+  <circle cx="400" cy="200" r="280" fill="#E2E8F0" fill-opacity="0.05" filter="blur(80px)"/>
+  
+  <!-- Blueprint Grid -->
+  <defs>
+    <pattern id="grid-monolith" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="url(#grid-monolith)"/>
+
+  <!-- Brutalist Architecture Frame -->
+  <rect x="40" y="40" width="720" height="420" rx="4" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" fill="#0D0F0E"/>
+  
+  <!-- Architectural Cross Hair and Datum Lines -->
+  <line x1="40" y1="250" x2="760" y2="250" stroke="rgba(255, 255, 255, 0.07)" stroke-dasharray="4 4"/>
+  <line x1="400" y1="40" x2="400" y2="460" stroke="rgba(255, 255, 255, 0.07)" stroke-dasharray="4 4"/>
+  
+  <!-- Top Meta Bar -->
+  <text x="65" y="75" fill="#64748B" font-family="monospace" font-size="11">MONOLITH ARCHITECTS · ZURICH / KYOTO</text>
+  <text x="660" y="75" fill="#94A3B8" font-family="monospace" font-size="11">VOL. 09 // 2025</text>
+  <line x1="40" y1="95" x2="760" y2="95" stroke="rgba(255, 255, 255, 0.1)"/>
+
+  <!-- Structural Isometric / Monolith Block Silhouette -->
+  <path d="M 120 370 L 260 210 L 400 370 Z" fill="#141715" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1"/>
+  <path d="M 260 210 L 400 370 L 560 310 L 420 150 Z" fill="#1A1F1C" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1"/>
+  <path d="M 260 210 L 420 150 L 320 110 L 160 170 Z" fill="#242B27" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1"/>
+  
+  <!-- Concrete Pillar Shading -->
+  <rect x="480" y="140" width="230" height="260" fill="#121614" stroke="rgba(255, 255, 255, 0.12)"/>
+  <line x1="480" y1="220" x2="710" y2="220" stroke="rgba(255, 255, 255, 0.08)"/>
+  <text x="500" y="175" fill="#FFFFFF" font-family="sans-serif" font-weight="700" font-size="18">RAW CONCRETE PAVILION</text>
+  <text x="500" y="200" fill="#94A3B8" font-family="monospace" font-size="11">LAT 47.3769° N · LON 8.5417° E</text>
+  
+  <text x="500" y="255" fill="#CBD5E1" font-family="sans-serif" font-size="12">Monolithic cast concrete structure with ambient natural zenith slit lighting.</text>
+
+  <!-- Scale bar -->
+  <line x1="500" y1="360" x2="650" y2="360" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="500" y1="355" x2="500" y2="365" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="650" y1="355" x2="650" y2="365" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="550" y="380" fill="#94A3B8" font-family="monospace" font-size="10">SCALE: 1:50m</text>
+
+  <!-- Big Monolith Tag -->
+  <text x="65" y="430" fill="#FFFFFF" font-family="serif" font-size="32" letter-spacing="6">MONOLITH</text>
+  <text x="270" y="430" fill="#64748B" font-family="monospace" font-size="12">SPATIAL EXCELLENCE</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" fill="#080A09"/>
+  <!-- Ambient glow -->
+  <circle cx="650" cy="120" r="250" fill="#B6FF3B" fill-opacity="0.12" filter="blur(80px)"/>
+  <circle cx="150" cy="400" r="200" fill="#142614" fill-opacity="0.3" filter="blur(60px)"/>
+  
+  <!-- Subtle grid -->
+  <defs>
+    <pattern id="grid-vanta" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(182, 255, 59, 0.07)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="url(#grid-vanta)"/>
+
+  <!-- Brutalist Frame -->
+  <rect x="40" y="40" width="720" height="420" rx="12" stroke="#B6FF3B" stroke-opacity="0.3" stroke-width="1" fill="#0C100E" fill-opacity="0.6"/>
+  
+  <!-- Agency Header Bar -->
+  <rect x="40" y="40" width="720" height="48" rx="12" fill="#141A16" fill-opacity="0.8"/>
+  <circle cx="68" cy="64" r="5" fill="#EF4444"/>
+  <circle cx="86" cy="64" r="5" fill="#F59E0B"/>
+  <circle cx="104" cy="64" r="5" fill="#10B981"/>
+  <text x="130" y="68" fill="#8E9590" font-family="monospace" font-size="12">https://vanta.agency/experience</text>
+  <text x="680" y="68" fill="#B6FF3B" font-family="monospace" font-size="11" font-weight="bold">LIVE DEMO</text>
+
+  <!-- Big Typography Graphic -->
+  <text x="80" y="190" fill="#FFFFFF" font-family="sans-serif" font-weight="900" font-size="64" letter-spacing="-2">VANTA</text>
+  <text x="80" y="230" fill="#B6FF3B" font-family="monospace" font-weight="600" font-size="16" letter-spacing="4">DIGITAL HYPER-STUDIO</text>
+  <text x="80" y="270" fill="#8E9590" font-family="sans-serif" font-size="14" max-width="360">Architecting immersive sensory environments, kinetic typography, and avant-garde brand identities.</text>
+
+  <!-- Geometric Accent Cards -->
+  <rect x="480" y="130" width="240" height="150" rx="8" fill="#151E18" stroke="#B6FF3B" stroke-opacity="0.4" stroke-width="1"/>
+  <path d="M 500 240 L 550 180 L 600 210 L 680 150" stroke="#B6FF3B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="680" cy="150" r="6" fill="#B6FF3B"/>
+  <text x="500" y="160" fill="#A1A7A4" font-family="monospace" font-size="11">MOTION CURVE // 120 FPS</text>
+
+  <rect x="480" y="300" width="240" height="120" rx="8" fill="#101512" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="500" y="335" fill="#FFFFFF" font-family="sans-serif" font-weight="bold" font-size="14">INTERACTIVE PHYSICS</text>
+  <text x="500" y="360" fill="#8E9590" font-family="monospace" font-size="11">Damping: 0.85 · Elasticity: 0.92</text>
+  <rect x="500" y="380" width="180" height="6" rx="3" fill="#1C241E"/>
+  <rect x="500" y="380" width="145" height="6" rx="3" fill="#B6FF3B"/>
+
+  <!-- Footer Badges -->
+  <rect x="80" y="380" width="120" height="32" rx="16" fill="#18231C" stroke="#B6FF3B" stroke-opacity="0.3"/>
+  <text x="100" y="401" fill="#B6FF3B" font-family="monospace" font-size="12">Next.js 15</text>
+  <rect x="210" y="380" width="90" height="32" rx="16" fill="#18231C" stroke="#B6FF3B" stroke-opacity="0.3"/>
+  <text x="232" y="401" fill="#B6FF3B" font-family="monospace" font-size="12">GSAP 3</text>
+</svg>

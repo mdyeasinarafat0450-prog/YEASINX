@@ -1,0 +1,29 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" fill="#090B0F"/>
+  <rect x="40" y="40" width="720" height="420" rx="8" fill="#111622" stroke="rgba(236,72,153,0.3)"/>
+  <text x="70" y="80" fill="#EC4899" font-family="monospace" font-size="14" font-weight="bold">SYNAPSE AI // HIGH-AVAILABILITY CLUSTER TOPOLOGY</text>
+  
+  <rect x="70" y="110" width="190" height="150" rx="6" fill="#171F2E" stroke="rgba(255,255,255,0.08)"/>
+  <text x="90" y="140" fill="#E2E8F0" font-family="sans-serif" font-weight="bold" font-size="14">Edge Ingestion</text>
+  <text x="90" y="165" fill="#9CA3AF" font-family="monospace" font-size="11">Envoy Proxy</text>
+  <text x="90" y="190" fill="#38BDF8" font-family="monospace" font-size="11">TLS 1.3 mTLS</text>
+  <text x="90" y="235" fill="#B6FF3B" font-family="monospace" font-size="11">● 99.999% Uptime</text>
+
+  <rect x="305" y="110" width="190" height="150" rx="6" fill="#171F2E" stroke="rgba(255,255,255,0.08)"/>
+  <text x="325" y="140" fill="#E2E8F0" font-family="sans-serif" font-weight="bold" font-size="14">Router Engine</text>
+  <text x="325" y="165" fill="#9CA3AF" font-family="monospace" font-size="11">Speculative Routing</text>
+  <text x="325" y="190" fill="#EC4899" font-family="monospace" font-size="11">Model Orchestrator</text>
+  <text x="325" y="235" fill="#B6FF3B" font-family="monospace" font-size="11">● 2.8ms Overhead</text>
+
+  <rect x="540" y="110" width="190" height="150" rx="6" fill="#171F2E" stroke="rgba(255,255,255,0.08)"/>
+  <text x="560" y="140" fill="#E2E8F0" font-family="sans-serif" font-weight="bold" font-size="14">GPU Clusters</text>
+  <text x="560" y="165" fill="#9CA3AF" font-family="monospace" font-size="11">vLLM Inference</text>
+  <text x="560" y="190" fill="#38BDF8" font-family="monospace" font-size="11">FP8 Quantized</text>
+  <text x="560" y="235" fill="#B6FF3B" font-family="monospace" font-size="11">● Auto-scaling Pool</text>
+
+  <rect x="70" y="290" width="660" height="140" rx="6" fill="#151A24" stroke="rgba(255,255,255,0.08)"/>
+  <text x="90" y="325" fill="#FFFFFF" font-family="sans-serif" font-weight="bold" font-size="16">Enterprise Verification Checklist</text>
+  <text x="90" y="355" fill="#B6FF3B" font-family="monospace" font-size="12">✓ HIPAA &amp; SOC2 Type II Certified</text>
+  <text x="90" y="380" fill="#B6FF3B" font-family="monospace" font-size="12">✓ Zero Data Retention (ZDR) Legal Guarantee</text>
+  <text x="90" y="405" fill="#B6FF3B" font-family="monospace" font-size="12">✓ Multi-Cloud Failover Across AWS, Azure, &amp; GCP</text>
+</svg>
