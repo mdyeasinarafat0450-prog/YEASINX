@@ -1,4 +1,4 @@
-# NEON//FRAME — Premium Interactive Portfolio
+# YEASINX — NEON//FRAME Premium Interactive Portfolio
 
 > **"I DESIGN DIGITAL EXPERIENCES."**  
 > *Creative Developer · Web Designer · Motion Designer*
