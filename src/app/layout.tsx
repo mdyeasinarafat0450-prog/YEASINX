@@ -1,45 +1,26 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Syne, Space_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const syne = Syne({
-  subsets: ["latin"],
-  variable: "--font-syne",
-  display: "swap",
-  weight: ["400", "600", "700", "800"],
-});
-
-const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  variable: "--font-space-mono",
-  display: "swap",
-  weight: ["400", "700"],
-});
-
 export const metadata: Metadata = {
-  title: "NEON//FRAME — Creative Developer & Motion Designer Portfolio",
+  title: "NEXORA — 3D Developer Portfolio | I DESIGN, I CREATE, I DEVELOP",
   description:
-    "Production-grade interactive portfolio of NEON//FRAME. Creative developer, web designer, and motion designer crafting high-impact digital experiences with live embedded previews.",
+    "Cinematic 3D interactive portfolio of NEXORA. Creative developer and UI engineer crafting immersive digital experiences, WebGL spatial environments, and high-performance web applications with live embedded previews.",
   keywords: [
+    "NEXORA",
     "Creative Developer",
-    "Web Designer",
-    "Motion Designer",
-    "Next.js",
-    "Interactive Portfolio",
+    "3D Developer Portfolio",
+    "Three.js",
     "WebGL",
-    "GSAP",
+    "Next.js",
+    "TypeScript",
+    "Interactive Portfolio",
     "Frontend Engineer",
+    "Tailwind CSS",
   ],
-  authors: [{ name: "NEON//FRAME" }],
+  authors: [{ name: "NEXORA" }],
   openGraph: {
-    title: "NEON//FRAME — Interactive Portfolio",
-    description: "Explore digital experiences and live interactive applications.",
+    title: "NEXORA — Interactive 3D Developer Portfolio",
+    description: "I DESIGN, I CREATE, I DEVELOP. Explore live interactive applications and spatial 3D developer workstation.",
     type: "website",
     locale: "en_US",
   },
@@ -60,11 +41,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${syne.variable} ${spaceMono.variable} dark`}
-    >
-      <body className="bg-background text-foreground antialiased selection:bg-neon selection:text-background min-h-screen relative font-sans">
+    <html lang="en" className="dark">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@600;700;800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="bg-[#080A09] text-white antialiased selection:bg-[#B6FF3B] selection:text-black min-h-screen relative font-sans">
         {children}
       </body>
     </html>

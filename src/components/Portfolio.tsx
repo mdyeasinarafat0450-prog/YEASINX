@@ -6,6 +6,7 @@ import { projectsData, projectCategories } from "@/data/projects";
 import ProjectCard from "./ProjectCard";
 import ProjectPreviewModal from "./ProjectPreviewModal";
 import { Sparkles, Layers, SlidersHorizontal, Eye } from "lucide-react";
+import { ScrollReveal } from "./ScrollReveal";
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>("All");
@@ -34,40 +35,42 @@ export default function Portfolio() {
   };
 
   return (
-    <section id="portfolio" className="relative py-28 px-6 max-w-7xl mx-auto scroll-mt-20">
+    <section id="portfolio" className="relative py-28 px-6 sm:px-10 lg:px-14 xl:px-16 max-w-[1780px] 2xl:max-w-[1920px] mx-auto scroll-mt-20">
       {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
-        <div>
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#121A15] border border-[#B6FF3B]/30 text-[#B6FF3B] font-mono text-xs mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>INTERACTIVE WORK SHOWCASE</span>
+      <ScrollReveal direction="up">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+          <div>
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#121A15] border border-[#B6FF3B]/30 text-[#B6FF3B] font-mono text-xs mb-3">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>INTERACTIVE WORK SHOWCASE</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white font-sans">
+              SELECTED <span className="text-[#B6FF3B]">PROJECTS</span>
+            </h2>
+            <p className="text-zinc-400 text-sm sm:text-base max-w-xl mt-3 font-sans leading-relaxed">
+              Every project includes an embedded live interactive preview or native sandbox environment. Click any card to explore live inside this portfolio.
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white font-sans">
-            SELECTED <span className="text-[#B6FF3B]">PROJECTS</span>
-          </h2>
-          <p className="text-zinc-400 text-sm sm:text-base max-w-xl mt-3 font-sans leading-relaxed">
-            Every project includes an embedded live interactive preview or native sandbox environment. Click any card to explore live inside this portfolio.
-          </p>
-        </div>
 
-        {/* Quick Stats Pill */}
-        <div className="hidden sm:flex items-center space-x-6 p-4 rounded-xl bg-[#0D120F] border border-white/10 text-xs font-mono">
-          <div>
-            <div className="text-white font-bold text-lg">04</div>
-            <div className="text-zinc-500">LIVE DEMOS</div>
-          </div>
-          <div className="w-px h-8 bg-white/10" />
-          <div>
-            <div className="text-[#B6FF3B] font-bold text-lg">100%</div>
-            <div className="text-zinc-500">INTERACTIVE</div>
-          </div>
-          <div className="w-px h-8 bg-white/10" />
-          <div>
-            <div className="text-white font-bold text-lg">60 FPS</div>
-            <div className="text-zinc-500">PERFORMANCE</div>
+          {/* Quick Stats Pill */}
+          <div className="hidden sm:flex items-center space-x-6 p-4 rounded-xl bg-[#0D120F] border border-white/10 text-xs font-mono">
+            <div>
+              <div className="text-white font-bold text-lg">04</div>
+              <div className="text-zinc-500">LIVE DEMOS</div>
+            </div>
+            <div className="w-px h-8 bg-white/10" />
+            <div>
+              <div className="text-[#B6FF3B] font-bold text-lg">100%</div>
+              <div className="text-zinc-500">INTERACTIVE</div>
+            </div>
+            <div className="w-px h-8 bg-white/10" />
+            <div>
+              <div className="text-white font-bold text-lg">60 FPS</div>
+              <div className="text-zinc-500">PERFORMANCE</div>
+            </div>
           </div>
         </div>
-      </div>
+      </ScrollReveal>
 
       {/* Filter Tabs */}
       <div className="flex items-center justify-between pb-6 mb-10 border-b border-white/10 overflow-x-auto scrollbar-none gap-4">
@@ -110,12 +113,13 @@ export default function Portfolio() {
 
       {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        {filteredProjects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-            onSelect={handleSelectProject}
-          />
+        {filteredProjects.map((project, idx) => (
+          <ScrollReveal key={project.id} delay={idx * 0.08} direction="up">
+            <ProjectCard
+              project={project}
+              onSelect={handleSelectProject}
+            />
+          </ScrollReveal>
         ))}
       </div>
 

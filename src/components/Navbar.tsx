@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ArrowUpRight, Menu, X, Sparkles, Terminal } from "lucide-react";
+import { ArrowUpRight, Menu, X, Sparkles, Terminal, Maximize2, Minimize2 } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,8 +16,25 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () => document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  }, []);
+
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(() => {});
+    } else {
+      document.exitFullscreen().catch(() => {});
+    }
+  };
+
   const navLinks = [
     { label: "WORK", href: "#portfolio" },
+    { label: "PROCESS", href: "#process" },
     { label: "ABOUT", href: "#about" },
     { label: "SKILLS", href: "#skills" },
     { label: "CONTACT", href: "#contact" },
@@ -30,14 +48,19 @@ export default function Navbar() {
           : "bg-transparent py-6"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-[1780px] 2xl:max-w-[1920px] mx-auto px-6 sm:px-10 lg:px-14 flex items-center justify-between">
         {/* Brand Logo */}
         <a
           href="#"
-          className="group flex items-center space-x-2 text-white font-mono tracking-tight font-extrabold text-lg sm:text-xl"
+          className="group flex items-center space-x-2.5 text-white font-mono tracking-tight font-extrabold text-lg sm:text-xl"
         >
           <span className="w-2.5 h-2.5 rounded-sm bg-[#B6FF3B] group-hover:rotate-45 transition-transform duration-300 shadow-[0_0_12px_#B6FF3B]" />
-          <span>NEON<span className="text-[#B6FF3B] group-hover:animate-pulse">//</span>FRAME</span>
+          <span>
+            NEXORA<span className="text-[#B6FF3B] group-hover:animate-pulse">.</span>
+          </span>
+          <span className="hidden sm:inline-block text-[10px] font-normal text-zinc-500 font-mono tracking-widest pl-1 border-l border-white/10 ml-1">
+            CREATIVE DEV
+          </span>
         </a>
 
         {/* Desktop Navigation Links */}
@@ -46,7 +69,7 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="hover:text-[#B6FF3B] transition-colors relative py-1 group"
+              className="hover:text-[#B6FF3B] transition-colors relative py-1 group cursor-pointer"
             >
               <span>{link.label}</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#B6FF3B] transition-all duration-300 group-hover:w-full" />
@@ -55,18 +78,28 @@ export default function Navbar() {
         </div>
 
         {/* Right CTA & Availability Status */}
-        <div className="hidden lg:flex items-center space-x-4">
+        <div className="hidden lg:flex items-center space-x-3.5">
           <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-[#0E1410] border border-[#B6FF3B]/30 text-xs font-mono text-zinc-300">
             <span className="w-2 h-2 rounded-full bg-[#B6FF3B] animate-ping" />
-            <span className="text-[11px] text-zinc-400">OPEN FOR WORK</span>
+            <span className="text-[11px] text-zinc-300">AVAILABLE FOR WORK</span>
           </div>
+
+          {/* Fullscreen Toggle Button */}
+          <button
+            onClick={toggleFullscreen}
+            className="px-3 py-1.5 rounded-full bg-[#0E1410] border border-white/10 text-zinc-400 hover:text-[#B6FF3B] hover:border-[#B6FF3B]/40 transition-all cursor-pointer flex items-center space-x-1.5 text-xs font-mono"
+            title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen Mode"}
+          >
+            {isFullscreen ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
+            <span className="hidden xl:inline text-[10px]">{isFullscreen ? "EXIT FULL" : "FULLSCREEN"}</span>
+          </button>
 
           <a
             href="#contact"
-            id="nav-lets-talk-btn"
-            className="px-4 py-2 rounded-full bg-[#B6FF3B] text-black font-semibold text-xs font-mono hover:bg-[#c6fb69] hover:shadow-[0_0_25px_rgba(182,255,59,0.4)] transition-all flex items-center space-x-1.5"
+            id="nav-lets-connect-btn"
+            className="px-4 py-2 rounded-full bg-[#B6FF3B] text-black font-semibold text-xs font-mono hover:bg-[#c6fb69] hover:shadow-[0_0_25px_rgba(182,255,59,0.4)] transition-all flex items-center space-x-1.5 cursor-pointer"
           >
-            <span>LET&apos;S TALK</span>
+            <span>LET&apos;S CONNECT</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
         </div>
@@ -104,7 +137,7 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="w-full py-3 rounded-xl bg-[#B6FF3B] text-black font-bold text-center text-xs font-mono block shadow-lg shadow-[#B6FF3B]/20"
             >
-              LET&apos;S TALK
+              LET&apos;S CONNECT
             </a>
           </div>
         </div>

@@ -202,7 +202,7 @@ export default function ProjectPreviewModal({
             <Lock className="w-3.5 h-3.5 text-[#B6FF3B] shrink-0 mr-2" />
             <span className="text-zinc-500 select-none hidden sm:inline">https://</span>
             <span className="text-white font-semibold truncate">
-              neonframe.dev{project.demoPath.startsWith("/") ? project.demoPath : `/${project.slug}`}
+              nexora.dev{project.demoPath.startsWith("/") ? project.demoPath : `/${project.slug}`}
             </span>
             <span className="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-[#18231C] text-[#B6FF3B] font-bold border border-[#B6FF3B]/30 uppercase tracking-wider shrink-0 ml-2">
               {project.previewMode}
